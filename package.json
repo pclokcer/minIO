@@ -1,0 +1,22 @@
+{
+  "name": "minio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:build": "esbuild index.ts --watch --bundle --outfile=build/index.js --platform=node --sourcemap",
+    "dev:start": "nodemon build/index.js",
+    "start": "concurrently \"npm run dev:build\" \"npm run dev:start\""
+  },
+  "keywords": [],
+  "author": "Erdem UN",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/minio": "^7.0.11",
+    "esbuild": "^0.14.8",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "minio": "^7.0.25"
+  }
+}
