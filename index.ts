@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from 'minio'
+import { Client } from 'minio'
 
 interface MinIOParams {
   endPoint: string,
@@ -41,10 +41,10 @@ const start = async () => {
       await client.makeBucket('test', 'eu-central-1')
     }
 
-    // images is coming your directiory *.part.minio extension
+    // image is putting to min.io
     await client.fPutObject('test', 'image.png', `${process.cwd()}/image.png`, {})
 
-    // images is coming your directiory *.part.minio extension
+    // image is coming your directiory
     await client.fGetObject('test', 'image.png', `${process.cwd()}/storage/tmp/image.png`)
 
     // Your bucket removing
