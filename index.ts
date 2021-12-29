@@ -47,6 +47,9 @@ const start = async () => {
     // image is coming your directiory
     await client.fGetObject('test', 'image.png', `${process.cwd()}/storage/tmp/image.png`)
 
+    // Get Image Public Url
+    console.log(await client.presignedUrl('GET', 'test', 'image.png'))
+
     // Your bucket removing
     await client.removeBucket('test')
 
