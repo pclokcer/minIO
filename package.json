@@ -2,7 +2,7 @@
   "name": "minio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "dev:build": "esbuild index.ts --watch --bundle --outfile=build/index.js --platform=node --sourcemap",
     "dev:start": "nodemon build/index.js",
@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/minio": "^7.0.11",
+    "concurrently": "^7.6.0",
     "esbuild": "^0.14.8",
     "nodemon": "^2.0.15"
   },
